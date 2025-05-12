@@ -1,0 +1,28 @@
+Nome: Marlon da Silva Dantas
+
+mkdir curso-git-ead-ifrn
+cd curso-git-ead-ifrn
+git clone https://gitlab.com/mizael.cortez/curso-branchs-ifrn-ead .
+cd curso-branchs-ifrn-ead
+echo "linha qualquer de conteudo" > texto.txt
+git add texto.txt
+git commit -m "Adicionando texto.txt na branch main"
+git checkout -b feature-1
+echo "conteúdo alterado" > texto.txt
+git add texto.txt
+git commit -m "Alteração no conteúdo de texto.txt"
+git checkout main
+echo "Alterando o conteúdo novamente" > texto.txt
+git add texto.txt
+git commit -m "Alteração de texto.txt na main"
+git merge feature-1
+vim texto.txt
+git add texto.txt
+git commit -m "resolvendo conflito"
+git checkout -b add-comandos
+vim comandos.txt
+git add comandos.txt
+git commit -m "Adicionando comandos.txt"
+git remote add origin-atividade https://github.com/MarlonHD/tarefa2-curso-git.git
+git push origin-atividade main
+git push origin-atividade add-comandos
